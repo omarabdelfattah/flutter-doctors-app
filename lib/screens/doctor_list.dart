@@ -15,10 +15,12 @@ class _DoctorListState extends State<DoctorList> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: Icon(Icons.add,
+        color: Colors.white,),
         backgroundColor: Color(0xff07da5f),
       ),
       appBar: appBar(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: bottomNavBar(),
       body: ListView(
           children: doctors.map((e) {
@@ -44,13 +46,11 @@ class _DoctorListState extends State<DoctorList> {
       child: Card(
         child: Row(
           children: [
-            // Image.asset('assets/images/1.jpg'),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(15.0),
               child: CircleAvatar(
-                // child: Image.asset('assets/images/1.jpg'),
                 backgroundImage: AssetImage(doctor.urlPhoto),
-                radius: 65,
+                radius: 45,
               ),
             ),
             Column(
@@ -142,7 +142,7 @@ class _DoctorListState extends State<DoctorList> {
       ),
       actions: [
         IconButton(
-          icon: Icon(Icons.workspaces_filled),
+          icon: Icon(Icons.more_horiz),
           onPressed: () {},
           color: Colors.white,
         )
